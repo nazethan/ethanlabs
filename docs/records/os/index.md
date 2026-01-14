@@ -1,0 +1,29 @@
+---
+title: Contents
+hide_title: true
+hide_table_of_contents: true
+sidebar_position: 1
+
+pagination_prev: null
+pagination_next: null
+---
+
+## **Operating Systems Lab**
+:::note
+No updates yet!
+:::
+
+
+<details>
+  <summary><b>See what's coming next!</b></summary>
+
+| Sl.No. | Aim of the Experiment | URL |
+| :---:  | :-------------------- | :-: |
+| `_` | To study the basic terminal commands of Linux | _ |
+| `_` | To perform basic file operations and text processing in Linux | _ |
+| `_` | To manage processes and system resources in Linux | _ |
+| `_` | To manage software packages in Linux | _ |
+| `_` | To manage disk partitions and storage in Linux | _ |
+| `_` | To write basic and advanced shell scripts in Linux | _ |
+
+</details>
