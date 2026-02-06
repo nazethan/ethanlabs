@@ -7,6 +7,4 @@ pagination_prev: null
 pagination_next: null
 ---
 
-
-
 ## Welcome to the Labs

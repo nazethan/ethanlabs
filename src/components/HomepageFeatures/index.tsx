@@ -5,58 +5,42 @@ import styles from './styles.module.css';
 import Link from '@docusaurus/Link';
 
 type FeatureItem = {
-  title: string;
   Svg: React.ComponentType<React.ComponentProps<'svg'>>;
-  description: ReactNode;
+  button: ReactNode;
+  description?: string;
 };
 
 const FeatureList: FeatureItem[] = [
   {
-    title: 'Records',
     Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
-    description: (
+    button: (
       <Link
         className="button button--secondary button--lg"
         to="/docs/records/">
-        Explore
+        Records
       </Link>
     ),
   },
-  
-  /**
   {
-    title: 'Guides',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
-    description: (
-      <Link
-        className="button button--primary button--lg"
-        to="https://dorukaysor.github.io/errors/404">
-        Explore
-      </Link>
-    ),
-  },
-  */
-  {
-    title: 'Github Repo',
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
-    description: (
+    button: (
       <Link
         className="button button--secondary button--lg"
-        to="https://github.com/nazethan/labs/">
-        Explore
+        to="/docs/projects/">
+        Coming Soon!
       </Link>
     ),
   },
 ];
 
-function Feature({title, Svg, description}: FeatureItem) {
+function Feature({Svg, button, description}: FeatureItem) {
   return (
     <div className={clsx('col col--6')}>
       <div className="text--center">
         <Svg className={styles.featureSvg} role="img" />
       </div>
       <div className="text--center padding-horiz--md">
-        <Heading as="h3">{title}</Heading>
+        {button}
         <p>{description}</p>
       </div>
     </div>

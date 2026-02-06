@@ -43,6 +43,6 @@
 }
 
 /* Sidebar customization */
-.hiddenPage {
+.hidden {
   display: none !important;
 }
