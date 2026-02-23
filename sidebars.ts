@@ -11,7 +11,7 @@ const sidebars: SidebarsConfig = {
     'records/index',
     {
       type: 'category',
-      label: 'Operating Systems Lab',
+      label: 'OS Lab',
       collapsed: true,
       collapsible: true,
       items: [
@@ -20,7 +20,7 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      label: 'Database Management Lab',
+      label: 'DBMS Lab',
       collapsed: true,
       collapsible: true,
       items: [
@@ -29,7 +29,7 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      label: 'Computer Networks Lab',
+      label: 'CN Lab',
       collapsed: true,
       collapsible: true,
       items: [

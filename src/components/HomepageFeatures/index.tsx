@@ -12,12 +12,22 @@ type FeatureItem = {
 
 const FeatureList: FeatureItem[] = [
   {
+    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    button: (
+      <Link
+        className="button button--secondary button--lg"
+        to="/docs/records/os/">
+        OS Records
+      </Link>
+    ),
+  },
+  {
     Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
     button: (
       <Link
         className="button button--secondary button--lg"
-        to="/docs/records/">
-        Records
+        to="/docs/records/dbms/">
+        DBMS Records
       </Link>
     ),
   },
@@ -26,16 +36,16 @@ const FeatureList: FeatureItem[] = [
     button: (
       <Link
         className="button button--secondary button--lg"
-        to="/docs/projects/">
-        Coming Soon!
+        to="/docs/records/cn/">
+        CN Records
       </Link>
     ),
-  },
+  }
 ];
 
 function Feature({Svg, button, description}: FeatureItem) {
   return (
-    <div className={clsx('col col--6')}>
+    <div className={clsx('col col--4')}>
       <div className="text--center">
         <Svg className={styles.featureSvg} role="img" />
       </div>
