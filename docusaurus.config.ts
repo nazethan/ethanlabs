@@ -82,7 +82,7 @@ const config: Config = {
     },
     footer: {
       style: 'dark',
-      copyright: `&copy; ${new Date().getFullYear()} All Rights Reserved &bull; Built with <a href="/docs/dev/">&hearts;</a>`,
+      copyright: `&copy; ${new Date().getFullYear()} All Rights Reserved &bull; Developed by <a href="https://github.com/dorukaysor">Doruk</a>`,
     },
     prism: {
       theme: prismThemes.github,
