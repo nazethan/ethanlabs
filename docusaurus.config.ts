@@ -69,14 +69,19 @@ const config: Config = {
         },
         */
         {
+          href: 'https://drive.google.com/file/d/1N8lwq9JIaMC_iSP21mvaiiPVT7zRvNDd/view?usp=drive_link',
+          position: 'right',
+          label: 'Syllabus',
+        },
+        {
           href: 'https://github.com/nazethan/labs',
           position: 'right',
-          label: 'GitHub',
+          label: 'GH',
         },
         {
           href: 'https://discord.gg/FHBc4NeGT5',
           position: 'right',
-          label: 'Discord',
+          label: 'DC',
         }
       ],
     },
