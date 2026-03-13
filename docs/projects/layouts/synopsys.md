@@ -1,44 +1,58 @@
 ---
 title: Project Synopsis
-sidebar_label: Project Synopsis
+sidebar_label: Synopsis
 
+sidebar_position: 3
 pagination_prev: null
 ---
 
-## **Introduction**
+### **Introduction**
 
-- The Concept:
-- The Need:
 
-## **Problem Statement**
+### **Problem Statement**
 
-## **Objectives of The Project**
 
-> [!note]
-> *Use a bulleted list of atleas 3-4 concrete goals*
+### **Objectives of The Project**
 
-## **Methodology & System Architecture**
+:::note
+  *Use a bulleted list of atleas 3-4 concrete goals*
+:::
 
-> [!note]
-> *This is the most important section of the synopsis*
 
-## **Hardware & Software Requirements**
+### **Methodology & System Architecture**
 
-> [!note]
-> *Keep this to a clean, categorized list*
+:::note
+  *This is the most important section of the synopsis*
+:::
 
-## **Applications & Advantages**
 
-## **Project Timeline** (Gantt Chart)
+### **Hardware & Software Requirements**
 
-> [!note]
-> *A simple table showing how you will spend your time*
+:::note
+  *Keep this to a clean, categorized list*
+:::
 
-> **Example:**
-> | Phase | Task | Duration |
-> |-------|------|----------|
-> | `1`     | Research & Literature Review | `2 weeks` |
 
-## **Conclusion**
+### **Applications & Advantages**
 
-## **References**
+
+### **Project Timeline**
+
+:::note
+  *A simple table showing how you will spend your time*
+
+  **Example:**
+  | Phase | Task | Duration |
+  |-------|------|----------|
+  | `1`     | Research & Literature Review | `2 weeks` |
+  | `2`     | System Design & Architecture | `3 weeks` |
+  | `3`     | Hardware & Software Development | `4 weeks` |
+  | `4`     | Testing & Evaluation | `2 weeks` |
+  ...
+:::
+
+
+### **Conclusion**
+
+
+### **References**

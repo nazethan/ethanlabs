@@ -9,11 +9,11 @@ const config: Config = {
   tagline: 'Welcome to the Labs!',
   favicon: 'img/favicon.ico',
 
-  url: 'https://ethanlabs.netlify.app/', // Your website URL
+  url: 'https://ethanlabs.netlify.app/',
   baseUrl: '/',
 
-  organizationName: 'nazethan', // Usually your GitHub org/user name.
-  projectName: 'nazethan.github.io', // Usually your repo name.
+  organizationName: 'nazethan',
+  projectName: 'nazethan.github.io',
   onBrokenLinks: 'warn',
 
   presets: [
@@ -55,14 +55,12 @@ const config: Config = {
           type: 'docSidebar',
           sidebarId: 'records_sidebar',
         },
-        /**
         {
-          label: 'Guides',
+          label: 'Projects',
           position: 'left',
           type: 'docSidebar',
-          sidebarId: 'guides_sidebar',
+          sidebarId: 'projects_sidebar',
         },
-        */
         {
           href: 'https://drive.google.com/file/d/1N8lwq9JIaMC_iSP21mvaiiPVT7zRvNDd/view?usp=drive_link',
           position: 'right',

@@ -6,7 +6,7 @@
     "jsx": "react-jsx",
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "moduleResolution": "node"
+    "moduleResolution": "node",
   },
   "exclude": [".docusaurus", "build"]
 }
