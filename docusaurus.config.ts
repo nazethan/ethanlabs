@@ -16,6 +16,18 @@ const config: Config = {
   projectName: 'nazethan.github.io',
   onBrokenLinks: 'warn',
 
+  plugins: [
+    async function tailwindPlugin() {
+      return {
+        name: 'docusaurus-tailwindcss',
+        configurePostCss(postcssOptions: { plugins: unknown[] }) {
+          postcssOptions.plugins.push(require('@tailwindcss/postcss'));
+          return postcssOptions;
+        },
+      };
+    },
+  ],
+
   presets: [
     [
       'classic',
@@ -43,6 +55,7 @@ const config: Config = {
       },
     },
     navbar: {
+      style: 'dark',
       title: 'Labs',
       logo: {
         alt: 'Logo',
@@ -69,18 +82,18 @@ const config: Config = {
         {
           href: 'https://github.com/nazethan/labs',
           position: 'right',
-          label: 'GH',
+          label: 'GitHub',
         },
         {
           href: 'https://discord.gg/FHBc4NeGT5',
           position: 'right',
-          label: 'DC',
+          label: 'Join Discord',
         }
       ],
     },
     footer: {
       style: 'dark',
-      copyright: `&copy; ${new Date().getFullYear()} All Rights Reserved &bull; Developed by <a href="https://github.com/dorukaysor">Doruk</a>`,
+      copyright: `&copy; ${new Date().getFullYear()} All Rights Reserved &bull; Developed by <a href="https://github.com/dorukaysor">Doruk Aysor</a>`,
     },
     prism: {
       theme: prismThemes.github,

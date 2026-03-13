@@ -4,10 +4,21 @@
  */
 
 .heroBanner {
+  min-height: 40vh;
   padding: 4rem 0;
   text-align: center;
   position: relative;
   overflow: hidden;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+main {
+  min-height: 10vh;
 }
 
 @media screen and (max-width: 996px) {

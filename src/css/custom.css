@@ -3,6 +3,11 @@
  * bundles Infima by default. Infima is a CSS framework designed to
  * work well for content-centric websites.
  */
+/* Tailwind CSS v4 — utilities only, placed in a named layer to prevent
+  conflicts with Docusaurus / Infima base styles. */
+@import "tailwindcss/utilities" layer(tailwind-utilities);
+@source "../../src/components/rb/**/*.{ts,tsx}";
+
 
 /* You can override the default Infima variables here. */
 :root {
