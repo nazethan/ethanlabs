@@ -1,17 +1,34 @@
 ---
 title: Records
-sidebar_label: Index
+sidebar_label: Records
 hide_table_of_contents: true
 
 pagination_prev: null
 pagination_next: null
 ---
 
-### **OS Lab**
-<Button link="os/" label="Explore" variant="primary" size="lg" />
+import { CardGrid, LinkCard } from '@site/src/components/LinkCard';
 
-### **DBMS Lab**
-<Button link="dbms/" label="Explore" variant="primary" size="lg" />
+<CardGrid>
+  <LinkCard
+    title="OS Lab"
+    description="Operating Systems Lab records."
+    href="os/">
+  </LinkCard>
+</CardGrid>
 
-### **CN Lab**
-<Button link="cn/" label="Explore" variant="primary" size="lg" />
+<CardGrid>
+  <LinkCard
+    title="DBMS Lab"
+    description="Database Management Systems Lab records."
+    href="dbms/">
+  </LinkCard>
+</CardGrid>
+
+<CardGrid>
+  <LinkCard
+    title="CN Lab"
+    description="Computer Networks Lab records."
+    href="cn/">
+  </LinkCard>
+</CardGrid>
