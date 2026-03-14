@@ -27,23 +27,22 @@ Explain full hardware architecture including the work flows
 
 ### 📘 CHAPTER 4: SOFTWARE & CLOUD INFRASTRUCTURE
 
-:::warning
-Include cloud, only if your project has cloud integrations!
+:::info
+Include  Software & Cloud infrastructure details, only if your project has cloud integrations!
 :::
 
 - **4.1 The Serverless Stack**
 - **4.2 Edge Database Management**
-- **4.3 AI Integration (Gemini 1.5 Pro)**
+- **4.3 AI Integration (If Any)**
 
 ### 📘 CHAPTER 5: USER INTERFACE
 
-:::warning
-Include this section, only if your project has has an user interface!
+:::info
+Include this section, only if your project has an user interface!
 :::
 
 - **5.1 Design Philosophy**
 - **5.2 Dashboard Views**
-- **5.3 State Management & Polling** How React hooks (`useEffect`) safely poll TursoDB to simulate live WebSockets.
 
 ### 📘 CHAPTER 6: IMPLEMENTATION & TESTING
 
@@ -60,3 +59,13 @@ Include this section, only if your project has has an user interface!
 ### 📄 REFERENCES
 
 - **References / Bibliography**
+
+---
+
+:::note
+
+All the sub-sections are optional and should be included only if they are relevant to your project.  
+
+The main focus should be on the hardware architecture, software/cloud infrastructure, and user interface (if applicable). Make sure to provide detailed explanations and diagrams where necessary to clearly convey your design and implementation process.
+
+:::
