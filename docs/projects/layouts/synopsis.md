@@ -36,7 +36,7 @@ pagination_prev: null
 ### **Applications & Advantages**
 
 
-### **Project Timeline**
+### **Project Timeline *(optional)***
 
 :::note
   *A simple table showing how you will spend your time*
