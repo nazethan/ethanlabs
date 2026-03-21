@@ -1,0 +1,109 @@
+---
+title: Project Synopsis
+sidebar_label: Synopsis
+
+sidebar_class_name: hidden
+
+sidebar_position: 3
+pagination_prev: null
+pagination_next: null
+---
+
+### **1. Project Title**
+
+The title should be concise but descriptive. It usually follows the format: [System Name]: An IoT-based [Application] for [Target Problem].
+
+> Example: "SmartGrid: An IoT-based Real-time Energy Monitoring and Predictive Maintenance System."
+
+
+### **2. Abstract / Introduction**
+
+Provide a high-level overview of the project in 150–250 words.
+
+- **What:** What is the project?
+- **How:** Briefly mention the primary technology stack (e.g., ESP32, MQTT, Cloud Integration).
+- **Why:** What is the primary benefit or "vision" of the project?
+
+
+### **3. Problem Statement**
+
+Clearly define the specific pain point your project addresses.
+
+- What is the current manual process or inefficient system?
+- What are the limitations of existing solutions (cost, latency, lack of automation)?
+
+
+### **4. Literature**
+
+Briefly mention 2–3 existing works or research papers related to your project. This shows you have researched the field.
+
+- Mention what they achieved.
+- Identify the "Gap" (what your project does differently or better).
+
+
+### **5. Objectives**
+
+List 3–5 specific, measurable goals.
+
+- *Example:* To design a low-power sensor node for moisture detection.
+- *Example:* To develop a mobile dashboard for real-time data visualization.
+- *Example:* To implement an automated alert system via SMS/Email using IFTTT.
+
+
+### **6. System Architecture & Methodology**
+
+Describe your approach. This is the "meat" of the synopsis.
+
+- **Data Acquisition:** How are sensors collecting data?
+- **Processing:** What happens at the Edge (Microcontroller) vs. the Cloud?
+- **Communication:** Which protocols are being used? (Wi-Fi, LoRaWAN, Zigbee, etc.)
+- **Action/Control:** Does the system trigger an actuator (like a motor) or just log data?
+
+
+### **7. System Architecture (Block Diagram)**
+
+In your final document, you should include a professional block diagram. In this section of the layout, describe the three main layers:
+
+- **Perception Layer:** Sensors and Actuators.
+- **Network Layer:** Gateways and Communication protocols.
+- **Application Layer:** Cloud platforms (AWS IoT, Firebase, Blynk) and End-user interfaces.
+
+
+### **8. Requirements Specification**
+
+Use tables to make this section scannable.
+
+#### **Hardware Requirements**
+
+| Component	| Specification/Model	| Purpose |
+|-------------|----------------------|---------|
+| Microcontroller	| ESP32 / Arduino / Raspberry Pi	| Central processing and Wi-Fi |
+| Sensors	| DHT11 / Ultrasonic / PIR	| Environmental data collection |
+| Connectivity	| Wi-Fi / GSM Module	| Data transmission |
+| Power	| 5V Li-ion Battery / Solar	| Energy source |
+
+
+#### **Software Requirements**
+
+| Tool / Platform	| Usage |
+|-------------------|-------|
+| IDE	| Arduino IDE / VS Code (PlatformIO) |
+| Cloud/Backend	| Adafruit IO / ThingsBoard / Firebase |
+| Languages	| C++, Python, JavaScript |
+| Dashboard	| Blynk / Flutter / React / MIT App Inventor |
+
+
+#### **9. Expected Outcomes**
+
+What will the final prototype actually do?
+
+- "The system will provide real-time alerts when parameters exceed a threshold."
+- "Data will be logged in a cloud database for historical analysis."
+
+
+#### **10. Future Scope**
+
+How can this project be scaled?
+
+- Integration of Machine Learning for predictive analytics.
+- Scaling to a Mesh Network for larger industrial coverage.
