@@ -93,7 +93,7 @@ Use tables to make this section scannable.
 | Dashboard	| Blynk / Flutter / React / MIT App Inventor |
 
 
-#### **9. Expected Outcomes**
+### **9. Expected Outcomes**
 
 What will the final prototype actually do?
 
@@ -101,7 +101,7 @@ What will the final prototype actually do?
 - "Data will be logged in a cloud database for historical analysis."
 
 
-#### **10. Future Scope**
+### **10. Future Scope**
 
 How can this project be scaled?
 
