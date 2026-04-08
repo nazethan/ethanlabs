@@ -1,70 +1,127 @@
 ---
 title: Project Synopsis
+hide_title: true
 sidebar_label: Synopsis
 
-sidebar_position: 1
+sidebar_class_name: hidden
+
 pagination_prev: null
+pagination_next: null
 ---
 
-### **1. Introduction**
-
-
-### **2. Problem Statement**
-
-
-### **3. Objectives of The Project**
-
-:::note
-  *Use a bulleted list of atleas 3-4 concrete goals*
-:::
-
-
-### **4. Methodology & System Architecture**
-
-:::note
-  *This is the most important section of the synopsis*
-:::
-
-
-### **5. Hardware & Software Requirements**
-
-:::note
-  *Keep this to a clean, categorized list*
-:::
-
-
-### **6. Applications & Advantages**
-
-
-### **7. Project Timeline *(optional)***
-
-:::note
-
-  *A simple table showing how you will spend your time*  
-  **Example:**
-
+<details>
+<summary><b>Title Page</b></summary>
 <div align="center">
-
-  | Phase | Task | Duration |
-  |-------|------|----------|
-  | `1`     | Research & Literature Review | `2 weeks` |
-  | `2`     | System Design & Architecture | `3 weeks` |
-  | `3`     | Hardware & Software Development | `4 weeks` |
-  | `4`     | Testing & Evaluation | `2 weeks` |
-  ...
-
+# **[ Project Title/System Name ]**
+```
+An IoT-based [Application] for [Target Problem]
+```
 </div>
 
+:::note For example...
+<div align="center">
+# SmartGrid
+```
+An IoT-based Real-time Energy Monitoring and Predictive Maintenance System
+```
+</div>
 :::
+</details>
+
+### **Abstract / Introduction / Overview**
+
+Provide a high-level overview of the project in 150–250 words.
+
+- **What:** What is the project?
+- **How:** Briefly mention the primary technology stack (e.g., ESP32, MQTT, Cloud Integration).
+- **Why:** What is the primary benefit or "vision" of the project?
 
 
-### **8. Conclusion**
+### **Problem Statement**
+
+Clearly define the specific pain point your project addresses.
+
+- What is the current manual process or inefficient system?
+- What are the limitations of existing solutions (cost, latency, lack of automation)?
 
 
-### **9. References**
+### **Literature**
+
+Briefly mention 2–3 existing works or research papers related to your project. This shows you have researched the field.
+
+- Mention what they achieved.
+- Identify the "Gap" (what your project does differently or better).
+
+
+### **Objectives**
+
+List 3–5 specific, measurable goals.
+
+- *Example:* To design a low-power sensor node for moisture detection.
+- *Example:* To develop a mobile dashboard for real-time data visualization.
+- *Example:* To implement an automated alert system via SMS/Email using IFTTT.
+
+
+### **System Architecture & Methodology**
+
+Describe your approach. This is the "meat" of the synopsis.
+
+- **Data Acquisition:** How are sensors collecting data?
+- **Processing:** What happens at the Edge (Microcontroller) vs. the Cloud?
+- **Communication:** Which protocols are being used? (Wi-Fi, LoRaWAN, Zigbee, etc.)
+- **Action/Control:** Does the system trigger an actuator (like a motor) or just log data?
+
+
+### **System Architecture (Block Diagram)**
+
+In your final document, you should include a professional block diagram. In this section of the layout, describe the three main layers:
+
+- **Perception Layer:** Sensors and Actuators.
+- **Network Layer:** Gateways and Communication protocols.
+- **Application Layer:** Cloud platforms (AWS IoT, Firebase, Blynk) and End-user interfaces.
+
+
+### **Requirements Specification**
+
+Use tables to make this section scannable.
+
+#### **Hardware Requirements**
+
+| Component	| Specification/Model	| Purpose |
+|-------------|----------------------|---------|
+| Microcontroller	| ESP32 / Arduino / Raspberry Pi	| Central processing and Wi-Fi |
+| Sensors	| DHT11 / Ultrasonic / PIR	| Environmental data collection |
+| Connectivity	| Wi-Fi / GSM Module	| Data transmission |
+| Power	| 5V Li-ion Battery / Solar	| Energy source |
+
+
+#### **Software Requirements**
+
+| Tool / Platform	| Usage |
+|-------------------|-------|
+| IDE	| Arduino IDE / VS Code (PlatformIO) |
+| Cloud/Backend	| Adafruit IO / ThingsBoard / Firebase |
+| Languages	| C++, Python, JavaScript |
+| Dashboard	| Blynk / Flutter / React / MIT App Inventor |
+
+
+### **Expected Outcomes**
+
+What will the final prototype actually do?
+
+- "The system will provide real-time alerts when parameters exceed a threshold."
+- "Data will be logged in a cloud database for historical analysis."
+
+
+### **Future Scope**
+
+How can this project be scaled?
+
+- Integration of Machine Learning for predictive analytics.
+- Scaling to a Mesh Network for larger industrial coverage.
 
 ---
 
 <div align="center">
-<Button link="./detailed-synopsis" label="Detailed Synopsis" variant="info" size="m" />
+<Button link="/docs/projects/ether/literature/synopsis" label="Still Confused? Click on this"  variant="info"  size="m" />
 </div>

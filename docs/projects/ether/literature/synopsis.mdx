@@ -7,82 +7,106 @@ sidebar_label: Synopsis
 sidebar_position: 1
 ---
 
-## Introduction
-> **E.T.H.E.R.** is a next-generation, dual-node IoT energy monitoring system designed to bridge the gap between industrial power safety and consumer-friendly interfaces. The system utilizes a physical air-gap via ESP-NOW communication between a high-voltage wall unit (The Sentry) and a low-voltage desk interface (The Avatar). This architecture ensures maximum network security while delivering instantaneous hardware safety cutoffs. The edge computing layer securely transmits telemetry via Netlify Edge Functions to a serverless TursoDB (libSQL) database. Finally, the integration of the Gemini API translates raw power metrics into actionable, emotive insights displayed on a high-performance, dark-mode Heads-Up Dashboard (HUD) built with Astro and React. The primary vision is to transform sterile energy logging into an engaging, gamified, and ultra-secure daily habit.
+<div align="center">
+  <h1><b>E.T.H.E.R. - Synopsis</b></h1>
+</div>
 
-## Problem Statement
-Current smart home energy monitors suffer from three major flaws:
-- **Security Vulnerabilities:** They connect high-voltage switching hardware directly to local Wi-Fi routers, creating a severe entry point for network attacks.
-- **Latency in Safety:** They often rely on cloud-based round-trips to trigger safety cutoffs, which is dangerously slow during a critical 220V power surge.
-- **Poor User Engagement:** They present data in sterile, complex spreadsheets or uninspired dashboards that everyday users ignore, leading to poor energy management habits.
-
-## Literature Review
-> - **Standard Consumer Smart Plugs (e.g., TP-Link Kasa):** These devices achieve remote switching and basic power logging via smartphone apps  
-> > **The Gap**
-They lack air-gapped security by connecting directly to the main router and rely heavily on cloud latency for heavy-load automated cutoffs
-
-> - **Industrial Energy Meters (e.g., DIN rail PZEM systems):** These systems achieve highly accurate, localized AC monitoring for heavy machinery  
-> > **The Gap:** They completely lack intuitive user interfaces, missing the "emotive" or gamified aspect necessary to encourage non-technical users to actively save energy
-
-## Objectives
--	To engineer a physically air-gapped high-voltage edge node (The Sentry) capable of reading 220V AC mains and executing a localized, sub-second relay cutoff for loads exceeding 2500W.
--	To establish a router-less, 2.4GHz wireless communication bridge using the ESP-NOW protocol to securely transmit data to a low-voltage desk interface (The Avatar).
--	To develop a zero-scroll, Heads-Up Dashboard (HUD) using a modern serverless stack (Astro, React, TursoDB) for zero-latency data visualization.
--	To integrate a Large Language Model (Gemini 1.5 Pro) to analyze raw power telemetry and generate natural, emotive feedback.
-
-## System Architecture & Methodology
--	**Data Acquisition:** A PZEM-004T v3.0 AC Power Sensor continually reads voltage, current, and wattage directly from the 220V mains.
-- **Processing:** The Sentry node (ESP32) acts as the edge safety controller, instantly triggering a 5V relay if power exceeds the threshold. The Avatar node (ESP32) acts as the visual processing edge, updating its OLED and NeoPixel ring to reflect the system's "Emotive State" (Idle, Happy, Dizzy, Frustrated, Angry).
-- **Communication:** The Sentry and Avatar communicate locally via ESP-NOW (2.4GHz radio). The Avatar then forwards the JSON payload via HTTP POST over local Wi-Fi to the Netlify serverless backend.
-- **Action/Control:** The system features a hard hardware relay cutoff for critical safety, alongside visual actuation via addressable LEDs and screen expressions based on the live current load.
-
-## Requirements Specification
-### Hardware Requirements
--	**Microcontroller:** ESP32 DevKit v1 — *Central edge processing, ESP-NOW, & Wi-Fi transmission*
--	**Power Sensor:** PZEM-004T v3.0 — *220V AC voltage, current, & wattage data collection*
--	**Actuator/Safety:** 5V Relay Module — *Instantaneous hardware cutoff for overloaded circuits*
--	**Emotive UI:** 1.3” OLED & WS2812B — *Visual state indication by the Avatar Node*
--	**Power Supply:** Hi-Link HLK-PM01 — *Stepping down 220V AC to 5V DC for the Sentry node*
-
-### Software Requirements
--	**IDE & Firmware:** VS Code(PlatformIO) / C++ (Arduino Framework)
--	**Cloud:** Netlify (Edge Functions & Hosting)
--	**Database:** TursoDB (Serverless libSQL)
--	**AI Integration:** Google Gemini API
--	**Dashboard UI:** React, Vite, Tailwind, Typescript & Astro
-
-## Expected Outcomes
--	The system will successfully isolate the high-voltage reading environment from the internet-connected environment, proving the viability of air-gapped IoT safety.
--	The Sentry unit will automatically cut power in milliseconds if the load exceeds the hardcoded 2500W threshold.
--	The web dashboard will display live telemetry and AI-generated insights in a sleek, zero-scroll HUD layout, successfully polling the database without requiring full page reloads.
-
-## Future Scope
-### I. 📡 Hardware & Networking Scaling
-  -	**Multi-Node Mesh Networking (ESP-MESH):** Expanding the system from a single "Sentry-to-Avatar" pair into a full house network. Multiple Sentry nodes (monitoring different appliances) could use ESP-MESH to route data back to a single central Avatar node without needing a central Wi-Fi router.
-  -	**Renewable Energy Integration:** Adding bi-directional current monitoring to track not just power consumed from the grid, but also power generated if the user plugs in a small solar inverter setup.
-
-### II. 🧠 Advanced AI & Software Features
-  -	**Voice-Activated Emotive Interaction:** Upgrading the Avatar node with an I2S microphone and speaker to allow two-way voice communication, letting users literally ask the Gemini AI, "How is my power usage today?" and getting a spoken, emotive response.
-  -	**Automated Time-of-Use (TOU) Optimization:** Integrating local grid API data so the system can automatically suggest (or automatically cut) power to heavy appliances like water heaters during peak electricity rate hours to save money.
-
-### III. 📱 Ecosystem & Accessibility
-  -	**Cross-Platform Mobile Application:** Migrating the web-based HUD into a native mobile app (using React Native or Flutter) to enable critical push notifications. This ensures the user instantly gets an alert on their phone if the Sentry executes an emergency 2500W cutoff.
-  -	**Carbon Footprint Gamification:** Adding a software layer that calculates the exact CO2 emissions based on the power drawn and local grid fuel sources, giving users daily "Sustainability Scores" to gamify energy reduction.
+## **1. Introduction**
+Modern household power management is hampered by devices that compromise security for convenience, or devices that offer robust safety but alienate everyday users with impenetrable data displays.  
+**Project E.T.H.E.R.** is an innovative dual-node internet-of-things (IoT) ecosystem engineered to solve this dichotomy. By decoupling the high-voltage measurement hardware from the internet-facing user interface via an ESP-NOW wireless air-gap, **E.T.H.E.R.** prevents severe network vulnerabilities. At its core, localized edge computing instantly triggers power cutoffs for unsafe current loads without relying on cloud latency.  
+Telemetry is securely funneled through serverless backend architecture into a high-performance, aesthetically pleasing React/Astro dashboard. Crucially, the system employs Large Language Models(API) to translate numerical data into relatable, "emotive" states visually represented by a sub-node, gamifying energy conservation for everyday consumers.
 
 ---
 
-## Prepared By
-> #### **Saumit Swain *// Core Designer***
-> > Designing the physical enclosures for the hardware, mapping out the UI/UX wireframes, and wrapping up the project's overall presentation and impact
+## **2. Problem Statement**
+The proliferation of smart home appliances has exposed critical vulnerabilities in domestic energy monitoring and control. These flaws manifest in three primary areas:
+  -	**Network Security Risks:** Consumer "smart plugs" typically connect high-voltage switching relays directly to domestic Wi-Fi, creating a perilous vector for cyber intrusions.
+  -	**Delayed Emergency Response:** Traditional smart relays rely heavily on cloud-based processing for automation; in the event of an acute 220V power surge, this round-trip latency can result in catastrophic electrical failures.
+  -	**Ineffective User Experience:** Existing platforms deliver sterile metrics and raw data that fail to engage non-technical households, leading to a profound lack of sustained energy conservation habits.
+ 
+---
 
-> #### **Sourav Kumar Roy *// Quality Assurance***
-> > Rigorously testing the system—specifically timing the 2500W relay cutoff latency, calibrating the AC sensor, and stress-testing the database connection
-  
-> #### **Satyajit PaltaSingh *// Hardware***  
-> > Managing the physical circuitry, wiring the 220V Sentry and 5V Avatar nodes, and ensuring strict electrical safety protocols are met
+## **3. Literature Review**
+### **3.1 Commercial Smart Connectors**
+Devices such as TP-Link Kasa and Wemo utilize direct-to-router connections for remote power logging and actuation.
+  -	*Limitations:* Although convenient, tying household mains electricity straight to an often-unsecured wireless network defies fundamental security principles. Furthermore, fail-safes are generally software-driven through the cloud rather than relying on localized hardware interrupts.
 
-> #### **Subham Pasayat *// Operations***  
-> > Handling component sourcing, managing the project budget, and conducting market research on existing smart home vulnerabilities to strengthen the problem statement
+### **3.2 Heavy Machinery / Industrial Monitors**
+Hardware setups like DIN-mounted PZEM monitors offer exceptionally precise, low-latency AC tracking required for industrial settings.
+  -	*Limitations:* These setups entirely lack an abstraction layer for consumer interaction. There is no user-friendly graphical interface, and they provide zero behavioral incentives for the user to optimize their consumption.
 
-> #### **Piyush Parida *// Core Architect***  
-> > Driving the core system architecture, writing the firmware for the ESP32s, and building the serverless dashboard & integrating the database
+---
+
+## **4. Objectives**
+-	**Architect an Air-Gapped Safety Node:** Develop "The Sentry," a localized ESP32 edge node capable of reading 220V mains and executing a sub-second, hardware-level power cutoff for loads above 2500W.
+-	**Implement Secure Intra-Device Communication:** Utilize the router-less ESP-NOW protocol (2.4GHz) to transmit telemetry between the high-voltage Sentry node and a low-voltage display node ("The Avatar").
+-	**Build a Zero-Latency Digital Environment:** Create a modern, serverless Heads-Up Dashboard (HUD) leveraging Astro, React, and TursoDB for instantaneous, scroll-free data visualization.
+-	**Pioneer Emotive AI Integration:** Deploy the Google Gemini 1.5 Pro API to analyze raw telemetry and dynamically formulate relatable, emotive feedback that gamifies daily power monitoring.
+
+---
+
+## **5. System Architecture & Methodology**
+The architecture is purposefully segregated into two primary functional bounds to ensure both electrical safety and data integrity.
+| System Layer | Sub-Component | Functional Description |
+|--------------|----------------|----------------------|
+| **Edge Hardware (HV)** | The Sentry Node | Monitors 220V lines via a PZEM-004T v3.0 sensor. Completely isolated from the internet. Employs a 5V relay for instantaneous overcurrent protection. |
+| **Edge Hardware (LV)** | The Avatar Node | An internet-facing desktop companion that receives data from the Sentry via ESP-NOW. It drives an OLED and NeoPixels to display "Emotive States." |
+| **Communication Bridge** | ESP-NOW & Netlify | Data traverses a localized 2.4GHz radio frequency before the Avatar pushes JSON payloads over HTTP POST to Netlify Edge Functions. |
+| **Data & Application** | TursoDB & Frontend | Serverless libSQL database guarantees reliable ingestion, whilst the Astro/React dashboard handles real-time visual rendering and Gemini API calls. |
+
+---
+
+## **6. Requirements Specifications**
+### **6.1 Hardware Arsenal**
+| Component	| Function within Architecture |
+|-------------|------------------------------|
+| **ESP32 DevKit v1 (x2)** | Dual-node processing units handling edge logic, RF, and Wi-Fi. |
+| **PZEM-004T v3.0** | Precision sensor for compiling 220V AC voltage, current, and wattage. |
+| **5V Relay Module** | Actuator responsible for safely breaking the circuit during overloads. |
+| **1.3” OLED & WS2812B LEDs** | Peripheral visual elements rendering the Avatar's active expressions. |
+| **Hi-Link HLK-PM01** | AC-to-DC step-down converter to power the high-voltage edge node. |
+
+### **6.2 Software & Frameworks**
+| Technology | Application Context |
+|------------|---------------------|
+| **C++ / Arduino Core** | Deployed via PlatformIO for deterministic, low-level microcontroller firmware. |
+| **Netlify Edge Functions** | Scalable middle-tier API layer to process incoming telemetry POST requests. |
+| **TursoDB (libSQL)** | Lightweight, serverless datastore designed for extremely fast read/write edge operations. |
+| **Astro & React.js** | Composition of the interactive web HUD, styled with Tailwind CSS and TypeScript. |
+| **LLM API** | Natural language engine interpreting power metrics into nuanced user alerts. |
+
+---
+
+## **7. Expected Outcomes**
+-	**Validation of Air-Gapped Architecture:** Demonstration that high-voltage power can be comprehensively monitored and managed without exposing the physical relay to domestic Wi-Fi routers.
+-	**Immediate Threat Mitigation:** The successful execution of localized hardware power cutoffs (under 100 milliseconds) for loads spiking over the programmed 2500W threshold.
+-	**Enhanced User Retention:** Delivery of an application layer that successfully replaces traditional data spreadsheets with actionable AI insights and zero-refresh UI updates, thereby elevating user engagement.
+
+---
+
+## **8. Future Scopes**
+### **8.1 Network & Node Expansion**
+-	**Mesh Topologies (ESP-MESH):** Transitioning from a point-to-point architecture to a comprehensive domestic mesh, allowing numerous high-voltage nodes to report to a unified Avatar display hub.
+-	**Bi-Directional Metering:** Upgrading system logic to handle solar-inverter feedback, enabling the monitoring of localized renewable energy generation in addition to grid consumption.
+
+### **8.2 Intelligent Software Evolution**
+-	**Acoustic Interaction:** Extending the Avatar node's hardware to include I2S audio components, facilitating two-way vocal communication with the Gemini AI model.
+-	**Dynamic Grid Synchronization:** Pulling localized Time-of-Use (TOU) tariffs from grid API endpoints so the system can intelligently suggest powering down specific appliances during peak pricing.
+
+### **8.3 Digital Ecosystem Portability**
+-	**Native Mobile Integration:** Re-engineering the web dashboard into a React Native framework to support critical, immediate push notifications for emergency relay cutoffs.
+-	**Carbon Tracking Platform:** Converting raw wattage data into accurate CO2 emissions based on local power-plant sourcing, offering households a gamified daily "Sustainability Score."
+
+---
+
+## **9. Conclusion**
+**ETHER** reimagines the paradigm of domestic power monitoring by proving that consumers do not have to sacrifice structural network security to achieve high-level convenience. Through the innovative use of decoupled, air-gapped ESP32 nodes, the system inherently blocks major attack vectors while actively preventing electrical fires via zero-latency edge cutoffs. By combining this robust physical layer with an emotionally responsive AI and a state-of-the-art serverless frontend, E.T.H.E.R. transcends simple data logging—it cultivates a safer, more engaged, and environmentally conscious household.
+
+---
+
+## **10. References**
+-	**Espressif Systems.** (2024). ESP-NOW Wireless Communication Protocol User Guide.
+-	**Peacefair Electronics.** (n.d.). Datasheet: PZEM-004T v3.0 AC Power Monitoring Module.
+-	**Netlify.** (2024). Documentation on Edge Functions and Serverless Deployment.
+-	**Turso.** (2024). libSQL architecture at the Edge.
+-	**Google DeepMind.** (2024). Gemini API Integrations and Natural Language Processing.
